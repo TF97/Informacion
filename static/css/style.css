@@ -1,0 +1,327 @@
+.container{
+    display:grid;
+    /* grid-template: filas / columnas*/
+    grid-template: 100px 1fr 100px / 400px 1fr;
+    grid-template-areas: "header header"
+                        "left contenido"
+                        "footer footer";
+    grid-gap:20px;
+    height: 100vh;
+    /* background-color: #8DA9C4; */
+    background-image: url("/static/imagenes/starwars1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    grid-area: header;
+}
+
+.barra{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: #780000;
+    font-weight: bold;
+    transition: ease;
+}
+
+.barra ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-top: 1px;
+    font-size: 50px;
+}
+
+/* Aplica el efecto hover a los elementos de la lista */
+.barra ul li {
+    transition: transform 0.3s ease;
+}
+
+.barra ul li:hover {
+    transform: scale(1.1);
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+.left{
+    grid-area: left;
+
+    h1{
+        color: #0B2545;
+        width: 100px;
+        font-size: 50px;
+        margin-left: 70px;
+    }
+    h2{
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        color: #0B2545;
+        margin-left: -10px;
+        margin-top: 100px;
+    }
+
+    .parrafo{
+        background-color: none;
+        font-family: sans-serif;
+        color: #EDEDE9;
+        margin-top: 50px; /* Ajusta el valor según tu preferencia */
+        margin-bottom: 50px; /* Ajusta el valor según tu preferencia */
+        border-radius: 8px; /* Puedes ajustar el radio según tu diseño */
+        padding: 10px;
+        border: 2px #FDF0D5 solid;
+    }
+
+    button {
+        text-align: center;
+        font-size: 18px; /* Ajusta el tamaño según tu preferencia */
+        padding: 10px 20px; /* Añade un relleno interno al botón */
+        border-radius: 5px; /* Añade bordes redondeados al botón */
+        justify-content: center;
+        margin-left: 110px;
+        background-color: transparent;
+    }
+
+    button:hover {
+        background-color: none; /* Cambia el color al pasar el mouse */
+        transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+    }
+
+    a{
+        text-decoration: none;
+        color: #EDEDE9;
+    }
+
+}
+
+.contenido{
+    grid-area: contenido;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajas1 img {
+    width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    border:  2px #13315C solid;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.cajas1 img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+.cajas1 img.enlarge {
+    transform: scale(2);  /*Aumento al hacer clic */
+}
+
+.cajas2 video{
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    border:  2px #780000 solid;
+    border-radius: 10px;
+}
+
+#canvas-container {
+    width: 300px;  /*Ancho deseado para el cuadro del objeto 3D*/
+    height: 300px;  /*Altura deseada para el cuadro del objeto 3D */
+    margin: 0 auto;  /*Centrar horizontalmente*/
+    overflow: hidden;  /*Ocultar desbordamiento*/
+}
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    margin-right: -600px;
+    color: #EEF4ED;
+}
+
+.telefono{
+    width: 30px;
+    height: 30px;
+}
+
+.perfil{
+    width: 30px;
+    height: 30px;
+}
+
+.gmail{
+    width: 50px;
+    height: 30px;
+}
+
+h3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 300px; 
+    margin-bottom: -23px;
+    color: #780000;
+    margin-right: -600px
+}
+
+.icono img{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+.footer{
+    grid-area: footer;
+   
+   p{ 
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #134074;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    }
+}
+
+.item{
+    background-color:transparent;
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-areas: "left"
+                             "header"
+                             "contenido"
+                             "footer";
+        grid-template-rows: auto;
+        height: auto;
+        background-size: contain;
+    }
+    .left, .contenido {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .header ul {
+        font-size: 30px;
+    }
+    .left h1 {
+        font-size: 40px;
+        margin-left: 10px;
+    }
+    .left h2 {
+        margin-top: 50px;
+    }
+    .left .parrafo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .left button {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas: "left"
+                             "header"
+                             "contenido"
+                             "footer";
+        grid-template-rows: auto;
+        height: auto;
+        background-size: cover;
+    }
+    .header ul {
+        font-size: 20px;
+        flex-direction: column;
+    }
+    .left h1 {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+    .left h2 {
+        margin-top: 30px;
+    }
+    .left .parrafo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .left button {
+        margin-left: 5px;
+    }
+    .contenido .contacto {
+        margin-right: 0;
+    }
+    .contenido h3 {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-areas: "left"
+                             "header"
+                             "contenido"
+                             "footer";
+        grid-template-rows: auto;
+        height: auto;
+        background-size: cover;
+    }
+    .header ul {
+        font-size: 16px;
+    }
+    .left h1 {
+        font-size: 24px;
+        margin-left: 5px;
+    }
+    .left h2 {
+        margin-top: 20px;
+    }
+    .left .parrafo {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .left button {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+}
